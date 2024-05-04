@@ -1,0 +1,155 @@
+/* resets */
+body,
+h2,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* styles */
+body {
+  min-height: 100vh;
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  font-family: "Kumbh Sans", sans-serif;
+  color: hsl(237, 12%, 33%);
+  font-size: 12px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq {
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  width: 250px;
+}
+
+.faq h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2em;
+  padding: 100px 0 30px;
+}
+
+/* list styles */
+ul {
+  list-style-type: none;
+}
+
+details > summary {
+  list-style-type: none;
+  padding: 10px 0;
+}
+
+details[open] > summary {
+  font-weight: 700;
+  padding-bottom: 10px;
+  border-bottom: none;
+}
+
+details > summary,
+p {
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+p {
+  padding-bottom: 20px;
+  color: hsl(240, 6%, 50%);
+}
+
+/* dropdown arrow styles and position */
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+details[open] > summary > .dropdown-arrow {
+  transform: scaleY(-1);
+}
+
+.dropdown-arrow {
+  transition: transform 500ms;
+  padding-left: 10px;
+}
+
+/* logo image styles and position*/
+.images {
+  position: relative;
+}
+
+.logo-mobile,
+.shadow-mobile {
+  position: absolute;
+  width: 200px;
+  transform: translate(25%);
+}
+
+.logo-mobile {
+  top: -90px;
+}
+
+.shadow-mobile {
+  top: 0px;
+}
+
+/* hide desktop images for mobile */
+.logo-desktop,
+.box-desktop,
+.pattern {
+  display: none;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .faq h2 {
+    padding: 10px;
+  }
+
+  .faq {
+    padding-left: 300px;
+    width: 300px;
+    z-index: 2;
+  }
+
+  /* hide mobile images for desktop */
+  .logo-mobile,
+  .shadow-mobile {
+    display: none;
+  }
+
+  /* positioning desktop images */
+  main {
+    overflow: hidden;
+  }
+
+  .logo-desktop,
+  .box-desktop,
+  .pattern {
+    position: absolute;
+    display: block;
+  }
+
+  .logo-desktop,
+  .pattern {
+    width: 250px;
+  }
+
+  .logo-desktop {
+    transform: translate(-20%, 20%);
+    z-index: 1;
+  }
+
+  .box-desktop {
+    width: 120px;
+    transform: translate(-60%, 100%);
+    z-index: 2;
+  }
+
+  .pattern {
+    transform: translate(-20%, 10%);
+  }
+}
